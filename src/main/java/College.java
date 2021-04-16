@@ -19,4 +19,21 @@ public class College {
     public void setCollegeName(String collegeName) {
         this.collegeName = collegeName;
     }
+
+    public int countCourses(){
+        int courses = 0;
+        for(int i=0;i<depts.size();i++){
+            courses += depts.get(i).countCourses();
+        }
+        return courses;
+    }
+
+    public int countStudentsInCourses(){
+        int students = 0;
+        for(int i=0;i<depts.size();i++){
+            students += depts.get(i).countStudentsInDeptCourses();
+        }
+
+        return students;
+    }
 }
