@@ -3,7 +3,6 @@ import java.util.List;
 public class Student {
     private String name;
     private List<Course> courses;
-    private List<Student> students;
     Student student = new Student();
 
     public Student(){
@@ -31,7 +30,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "studentName='" + name + '\'' +
-                ", students=" + students +
+                ", courses=" + courses +
                 '}';
     }
 

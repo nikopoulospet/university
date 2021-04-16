@@ -1,10 +1,10 @@
-Univeristy.java
- Univeristy
+Student.java
+ Student
 Dept.java
  Dept
 College.java
  College
-Student.java
- Student
 Course.java
  Course
+Univeristy.java
+ Univeristy
