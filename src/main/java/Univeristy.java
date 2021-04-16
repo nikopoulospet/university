@@ -1,16 +1,14 @@
 import java.util.*;
 
-
-
 public class Univeristy {
     public static void main(String[] args){
-        List<Student> studentList = new ArrayList<Student>();
+        List<Student> studentList = new ArrayList<>();
         List<Course> courseList = new ArrayList<>();
 
         for(int i=0;i<15;i++){
             studentList.add(new Student());
             studentList.get(i).setName("student"+i);
-            studentList.get(i).setCourses(new LinkedList<Course>());
+            studentList.get(i).setCourses(new LinkedList<>());
         }
 
 
@@ -19,9 +17,9 @@ public class Univeristy {
         for(int i=0;i<5;i++){
             courseList.add(new Course());
             courseList.get(i).setName("course"+i);
-            courseList.get(i).setStudents(new LinkedList<Student>());
+            courseList.get(i).setStudents(new LinkedList<>());
 
-            for(int ii=0;i<6;i++){
+            for(int ii=0;ii<6;ii++){
                 int x = (ii+offset)%studentList.size();
                 courseList.get(i).addStudent(studentList.get(x));
                 studentList.get(x).addCourse(courseList.get(i));
@@ -44,21 +42,21 @@ public class Univeristy {
         College college0 = new College();
         college0.setDepts(deptList);
 
-        System.out.println("total number of students in college 0: " + college0.countStudentsInCourses());
-        System.out.println("========= department breakdown =========");
+        System.out.println("Total number of students in college 0: " + college0.countStudentsInCourses());
+        System.out.println("========= Department Breakdown =========");
         for(int i=0;i<deptList.size();i++){
-            System.out.println("depart"+i+" has " + deptList.get(i).countStudentsInDeptCourses() + "students");
+            System.out.println("Department "+i+" has " + deptList.get(i).countStudentsInDeptCourses() + " students.");
         }
 
-        System.out.println("total number of courses in college 0: "+ college0.countCourses());
-        System.out.println("========= department breakdown =========");
+        System.out.println("Total number of courses in college 0: "+ college0.countCourses());
+        System.out.println("========= Department Breakdown =========");
         for(int i=0;i<deptList.size();i++){
-            System.out.println("depart"+i+" has " + deptList.get(i).countCourses() + "courses");
+            System.out.println("Department "+i+" has " + deptList.get(i).countCourses() + " courses.");
         }
 
-        System.out.println("==== some student examples ====");
+        System.out.println("========== Some Student Examples ==========");
         for(int i=0;i<5;i++){
-            System.out.println("student"+i+" is enrolled in " + studentList.get(i).getCourses().size() + " courses");
+            System.out.println("Student "+i+" is enrolled in " + studentList.get(i).getCourses().size() + " courses.");
         }
 
     }
