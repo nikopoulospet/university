@@ -15,21 +15,16 @@ public class Student {
         return this.name;
     }
 
-    public static void setName(String name){
-       try {
-           Student.setName(name);
-       }
-       catch(Exception e){
-           e.printStackTrace();
-        }
+    public void setName(String name){
+           student.setName(name);
     }
 
     public List<Course> getCourses(){
         return this.courses;
     }
 
-    public static List<Course> setCourses(List<Course> courses){
-        return Student.setCourses(courses);
+    public List<Course> setCourses(List<Course> courses){
+        return student.setCourses(courses);
     }
 
     @Override
@@ -41,7 +36,7 @@ public class Student {
     }
 
     public void listStudentCourses(){
-        System.out.println(student.courses);
+        System.out.println(name + "'s courses: " +  student.courses);
     }
 
     public void addCourse(Course course){

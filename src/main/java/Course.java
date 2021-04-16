@@ -35,7 +35,7 @@ public class Course {
     }
 
     public void listCourseStudents(){
-        System.out.println(course.students);
+        System.out.println(name +"'s students: " + course.students);
     }
 
     public void addStudent(Student student){
