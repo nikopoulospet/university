@@ -1,24 +1,30 @@
-import java.util.List;
+import java.util.*;
 
 
 
 public class Univeristy {
     public static void main(String[] args){
-        List<Student> studentList = null;
-        List<Course> courseList = null;
+        List<Student> studentList = new ArrayList<Student>();
+        List<Course> courseList = new ArrayList<>();
 
         for(int i=0;i<15;i++){
             studentList.add(new Student());
             studentList.get(i).setName("student"+i);
+            studentList.get(i).setCourses(new LinkedList<Course>());
         }
+
+
 
         int offset = 0;
         for(int i=0;i<5;i++){
             courseList.add(new Course());
             courseList.get(i).setName("course"+i);
+            courseList.get(i).setStudents(new LinkedList<Student>());
+
             for(int ii=0;i<6;i++){
-                int x = (i+offset)%studentList.size();
+                int x = (ii+offset)%studentList.size();
                 courseList.get(i).addStudent(studentList.get(x));
+                studentList.get(x).addCourse(courseList.get(i));
             }
             offset += 3;
         }
@@ -31,7 +37,7 @@ public class Univeristy {
         depart1.setCourses(courseList.subList(3,4));
 
 
-        List<Dept> deptList = null;
+        List<Dept> deptList = new ArrayList<>();
         deptList.add(depart0);
         deptList.add(depart1);
 

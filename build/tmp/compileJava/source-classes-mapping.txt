@@ -1,9 +1,9 @@
+College.java
+ College
 Student.java
  Student
 Dept.java
  Dept
-College.java
- College
 Course.java
  Course
 Univeristy.java

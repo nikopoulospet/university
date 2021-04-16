@@ -3,7 +3,6 @@ import java.util.List;
 public class Student {
     private String name;
     private List<Course> courses;
-    Student student = new Student();
 
     public Student(){
         this.name = getName();
@@ -15,27 +14,30 @@ public class Student {
     }
 
     public void setName(String name){
-           student.setName(name);
+           this.name = name;
     }
 
     public List<Course> getCourses(){
         return this.courses;
     }
 
-    public List<Course> setCourses(List<Course> courses){
-        return student.setCourses(courses);
+    public void setCourses(List<Course> courses){
+        this.courses = courses;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentName='" + name + '\'' +
-                ", courses=" + courses +
+                "studentName='" + this.name + '\'' +
+                ", courses=" + this.courses +
                 '}';
     }
 
     public void listStudentCourses(){
-        System.out.println(name + "'s courses: " +  student.courses);
+        System.out.println(name +"'s courses: ");
+        for(int i =0; i<courses.size();i++) {
+            System.out.println(courses.get(i));
+        }
     }
 
     public void addCourse(Course course){
