@@ -27,16 +27,14 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "courseName='" + this.name + '\'' +
-                ", students=" + this.students +
-                '}';
+        return "[" + this.name  +
+                ']' + " ";
     }
 
     public void listCourseStudents(){
         System.out.println(name +"'s students: ");
-        for(int i =0; i<students.size();i++) {
-            System.out.println(students.get(i));
+        for (Student student : students) {
+            System.out.println(student);
         }
     }
 

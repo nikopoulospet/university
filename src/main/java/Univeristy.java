@@ -7,7 +7,7 @@ public class Univeristy {
 
         for(int i=0;i<15;i++){
             studentList.add(new Student());
-            studentList.get(i).setName("student"+i);
+            studentList.get(i).setName("Student "+i);
             studentList.get(i).setCourses(new LinkedList<>());
         }
 
@@ -16,7 +16,7 @@ public class Univeristy {
         int offset = 0;
         for(int i=0;i<5;i++){
             courseList.add(new Course());
-            courseList.get(i).setName("course"+i);
+            courseList.get(i).setName("Course "+i);
             courseList.get(i).setStudents(new LinkedList<>());
 
             for(int ii=0;ii<6;ii++){
@@ -57,6 +57,14 @@ public class Univeristy {
         System.out.println("========== Some Student Examples ==========");
         for(int i=0;i<5;i++){
             System.out.println("Student "+i+" is enrolled in " + studentList.get(i).getCourses().size() + " courses.");
+            studentList.get(i).listStudentCourses();
+            System.out.println();
+        }
+
+        System.out.println("========== Some Course Examples ==========");
+        for(int i=0;i<5;i++){
+            System.out.println("Course "+i+" has " + courseList.get(i).getStudents().size() + " enrolled in the course.");
+            courseList.get(i).listCourseStudents();
         }
 
     }
