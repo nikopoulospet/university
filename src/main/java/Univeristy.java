@@ -14,25 +14,39 @@ public class Univeristy {
 
 
         int offset = 0;
-        for(int i=0;i<5;i++){
+        for(int i=0;i<3;i++){
             courseList.add(new Course());
             courseList.get(i).setName("Course "+i);
             courseList.get(i).setStudents(new LinkedList<>());
 
             for(int ii=0;ii<6;ii++){
-                int x = (ii+offset)%studentList.size();
+                int x = (ii+offset)%(studentList.size()/2);
                 courseList.get(i).addStudent(studentList.get(x));
                 studentList.get(x).addCourse(courseList.get(i));
             }
             offset += 3;
         }
 
+        offset = 0;
+        for(int i=3;i<5;i++){
+            courseList.add(new Course());
+            courseList.get(i).setName("Course "+i);
+            courseList.get(i).setStudents(new LinkedList<>());
+
+            for(int ii=0;ii<6;ii++){
+                int x = (ii+offset+(studentList.size()/2))%(studentList.size());
+                courseList.get(i).addStudent(studentList.get(x));
+                studentList.get(x).addCourse(courseList.get(i));
+            }
+            offset += 2;
+        }
+
         Dept depart0 = new Dept();
-        depart0.setCourses(courseList.subList(0,2));
+        depart0.setCourses(courseList.subList(0,3));
 
 
         Dept depart1 = new Dept();
-        depart1.setCourses(courseList.subList(3,4));
+        depart1.setCourses(courseList.subList(3,5));
 
 
         List<Dept> deptList = new ArrayList<>();

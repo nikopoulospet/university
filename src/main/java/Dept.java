@@ -1,4 +1,6 @@
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Dept {
     private String deptName;
@@ -27,10 +29,14 @@ public class Dept {
 
     public int countStudentsInDeptCourses() {
         int students = 0;
+        Set<Student> set = new HashSet<Student>();
         for(int i=0;i<courses.size();i++){
-            students += courses.get(i).getStudents().size();
+            //students += courses.get(i).getStudents().size();
+            for(int ii=0;ii<courses.get(i).getStudents().size();ii++) {
+                set.add(courses.get(i).getStudents().get(ii));
+            }
         }
 
-        return students;
+        return set.size();
     }
 }
